@@ -51,8 +51,10 @@
 		ADAAA0D52ACF568100AD4EC8 /* whisk */ = {
 			isa = PBXGroup;
 			children = (
+				ADAAA0E72ACF591800AD4EC8 /* Models */,
+				ADAAA0E62ACF590900AD4EC8 /* ViewModels */,
+				ADAAA0E52ACF58F600AD4EC8 /* Views */,
 				ADAAA0D62ACF568100AD4EC8 /* whiskApp.swift */,
-				ADAAA0D82ACF568100AD4EC8 /* ContentView.swift */,
 				ADAAA0DA2ACF568200AD4EC8 /* Assets.xcassets */,
 				ADAAA0DC2ACF568200AD4EC8 /* Preview Content */,
 			);
@@ -65,6 +67,52 @@
 				ADAAA0DD2ACF568200AD4EC8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ADAAA0E52ACF58F600AD4EC8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ADAAA0EA2ACF594400AD4EC8 /* Components */,
+				ADAAA0E92ACF593300AD4EC8 /* Detail */,
+				ADAAA0E82ACF592700AD4EC8 /* Main */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ADAAA0E62ACF590900AD4EC8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		ADAAA0E72ACF591800AD4EC8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ADAAA0E82ACF592700AD4EC8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				ADAAA0D82ACF568100AD4EC8 /* ContentView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		ADAAA0E92ACF593300AD4EC8 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		ADAAA0EA2ACF594400AD4EC8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
