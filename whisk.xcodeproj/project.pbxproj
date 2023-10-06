@@ -16,6 +16,8 @@
 		ADAAA0F02ACF5C8D00AD4EC8 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAAA0EF2ACF5C8D00AD4EC8 /* FavoritesView.swift */; };
 		ADAAA0F22ACF5DD400AD4EC8 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAAA0F12ACF5DD400AD4EC8 /* TabBar.swift */; };
 		ADAAA0F42ACF7D8D00AD4EC8 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAAA0F32ACF7D8D00AD4EC8 /* RecipeModel.swift */; };
+		ADCD89402AD09963009C059E /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD893F2AD09963009C059E /* RecipeCard.swift */; };
+		ADCD89422AD0A237009C059E /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD89412AD0A237009C059E /* RecipeList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		ADAAA0EF2ACF5C8D00AD4EC8 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		ADAAA0F12ACF5DD400AD4EC8 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		ADAAA0F32ACF7D8D00AD4EC8 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		ADCD893F2AD09963009C059E /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
+		ADCD89412AD0A237009C059E /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 		ADAAA0EA2ACF594400AD4EC8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				ADCD893F2AD09963009C059E /* RecipeCard.swift */,
+				ADCD89412AD0A237009C059E /* RecipeList.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -201,10 +207,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADAAA0F42ACF7D8D00AD4EC8 /* RecipeModel.swift in Sources */,
+				ADCD89422AD0A237009C059E /* RecipeList.swift in Sources */,
 				ADAAA0F02ACF5C8D00AD4EC8 /* FavoritesView.swift in Sources */,
 				ADAAA0EC2ACF5A4200AD4EC8 /* HomeView.swift in Sources */,
 				ADAAA0D92ACF568100AD4EC8 /* ContentView.swift in Sources */,
 				ADAAA0F22ACF5DD400AD4EC8 /* TabBar.swift in Sources */,
+				ADCD89402AD09963009C059E /* RecipeCard.swift in Sources */,
 				ADAAA0EE2ACF5A6200AD4EC8 /* AddRecipeView.swift in Sources */,
 				ADAAA0D72ACF568100AD4EC8 /* whiskApp.swift in Sources */,
 			);
