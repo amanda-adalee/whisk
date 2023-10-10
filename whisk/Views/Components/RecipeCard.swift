@@ -28,7 +28,7 @@ struct RecipeCard: View {
                 Image(systemName: "photo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 40,height: 40,alignment: .center)
+                    .frame(width: 40, height: 40, alignment: .center)
                     .foregroundColor(.white.opacity(0.7))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .overlay(alignment: .top) {
