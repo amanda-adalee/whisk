@@ -49,5 +49,5 @@ struct RecipeCard: View {
 }
 
 #Preview {
-    RecipeCard(recipe: Recipe.all[0])
+    RecipeCard(recipe: Recipe.sampleRecipes[0])
 }

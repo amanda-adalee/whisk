@@ -39,15 +39,7 @@ struct RecipeView: View {
                     if !recipe.description.isEmpty {
                         Text(recipe.description)
                     }
-                    if !recipe.cooktime.isEmpty {
-                        Text(recipe.cooktime)
-                    }
-                    if !recipe.servings.isEmpty {
-                        Text(recipe.servings)
-                    }
-                    if !recipe.category.isEmpty {
-                        Text(recipe.category)
-                    }
+
                     if !recipe.ingredients.isEmpty {
                         VStack(alignment: .leading, spacing: 20) {
                             Text("Ingredients")
@@ -74,5 +66,5 @@ struct RecipeView: View {
 }
 
 #Preview {
-    RecipeView(recipe: Recipe.all[0])
+    RecipeView(recipe: Recipe.sampleRecipes[0])
 }
