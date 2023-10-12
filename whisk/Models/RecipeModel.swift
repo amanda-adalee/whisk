@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Category: String, CaseIterable, Equatable {
+enum Category: String, CaseIterable, Equatable, Identifiable {
     case all, breakfast, lunch, dinner, side, snack, dessert, drink
     
     var id: String { self.rawValue }

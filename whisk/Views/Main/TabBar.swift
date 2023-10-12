@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TabBar: View {
+    @State private var showNewRecipe = false
+    
     var body: some View {
         TabView{
             HomeView()
@@ -15,10 +17,15 @@ struct TabBar: View {
                     Label("Home", systemImage: "house")
                         }
             
-            AddRecipeView()
-                .tabItem {
-                    Label("New", systemImage: "plus")
-                        }
+            Button("Enter new recipe manually") {
+                showNewRecipe = true
+            }
+            .tabItem {
+                Label("New", systemImage: "plus")
+            }
+            .sheet(isPresented: $showNewRecipe) {
+                NewRecipeView()
+            }
             
             FavoritesView()
                 .tabItem {
