@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD4F9A922AD886630003775E /* CategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F9A912AD886630003775E /* CategoryPicker.swift */; };
+		AD4F9A942AD889270003775E /* CustomCategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F9A932AD889270003775E /* CustomCategoryPicker.swift */; };
 		AD7C97302AD5EF4700F53F79 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C972F2AD5EF4700F53F79 /* RecipeView.swift */; };
 		ADAAA0D72ACF568100AD4EC8 /* whiskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAAA0D62ACF568100AD4EC8 /* whiskApp.swift */; };
 		ADAAA0D92ACF568100AD4EC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAAA0D82ACF568100AD4EC8 /* ContentView.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD4F9A912AD886630003775E /* CategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPicker.swift; sourceTree = "<group>"; };
+		AD4F9A932AD889270003775E /* CustomCategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryPicker.swift; sourceTree = "<group>"; };
 		AD7C972F2AD5EF4700F53F79 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		ADAAA0D32ACF568100AD4EC8 /* whisk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whisk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAAA0D62ACF568100AD4EC8 /* whiskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whiskApp.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 			children = (
 				ADCD893F2AD09963009C059E /* RecipeCard.swift */,
 				ADCD89412AD0A237009C059E /* RecipeList.swift */,
+				AD4F9A912AD886630003775E /* CategoryPicker.swift */,
+				AD4F9A932AD889270003775E /* CustomCategoryPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -213,10 +219,12 @@
 				ADCD89422AD0A237009C059E /* RecipeList.swift in Sources */,
 				ADAAA0F02ACF5C8D00AD4EC8 /* FavoritesView.swift in Sources */,
 				ADAAA0EC2ACF5A4200AD4EC8 /* HomeView.swift in Sources */,
+				AD4F9A942AD889270003775E /* CustomCategoryPicker.swift in Sources */,
 				AD7C97302AD5EF4700F53F79 /* RecipeView.swift in Sources */,
 				ADAAA0D92ACF568100AD4EC8 /* ContentView.swift in Sources */,
 				ADAAA0F22ACF5DD400AD4EC8 /* TabBar.swift in Sources */,
 				ADCD89402AD09963009C059E /* RecipeCard.swift in Sources */,
+				AD4F9A922AD886630003775E /* CategoryPicker.swift in Sources */,
 				ADAAA0EE2ACF5A6200AD4EC8 /* AddRecipeView.swift in Sources */,
 				ADAAA0D72ACF568100AD4EC8 /* whiskApp.swift in Sources */,
 			);

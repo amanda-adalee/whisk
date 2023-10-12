@@ -20,13 +20,8 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ScrollView{
-                Picker("Category", selection: $selectedCategory) {
-                    ForEach(Category.allCases, id: \.self) { category in
-                        Text(category.rawValue.capitalized)
-                            .tag(category)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
+                
+                CustomCategoryPicker(selectedCategory: $selectedCategory)
 
                 RecipeList(recipes: filteredRecipes)
             
