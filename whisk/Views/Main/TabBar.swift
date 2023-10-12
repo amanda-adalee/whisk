@@ -24,8 +24,8 @@ struct TabBar: View {
                 .tabItem {
                     Label("Favorites", systemImage: "heart")
                         }
-            
         }
+        .accentColor(.black)
     }
 }
 
