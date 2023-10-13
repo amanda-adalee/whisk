@@ -21,8 +21,8 @@ struct Recipe: Identifiable {
     let ingredients: String
     let directions: String
     let category: [Category]
-    let servings: String
-    let cooktime: String
+    let servings: Int
+    let cooktime: Int
     let dataPublished: String
     let url: String
 }
@@ -37,8 +37,8 @@ extension Recipe {
             ingredients: "1 cup butter\n3/4 cup of brown sugar\n2 eggs\n1 tsp vanilla\n1 tsp salt\n1 tsp baking soda\n2 1/2 cups of flour",
             directions: "1. Prep: Preheat the oven to 350 degrees Fahrenheit. Line a baking sheet with parchment paper.\n2. Cream: In a medium bowl, and using a mixer on medium, cream together the butter, brown sugar, and granulated sugar.\n3. Beat: Add the eggs and vanilla extract, and beat until fluffy.\n4. Mix: Add the all-purpose flour, baking soda, baking powder, and salt, and mix until combined. Add the chocolate chips, and mix well.\n5. Scoop and Bake: Using a 1-inch cookie scoop, drop the dough onto the prepared baking sheet. Bake for 7 or 8 minutes per batch.\n6. Cool: Transfer the cookies to a wire rack to cool.",
             category: [.all, .dessert],
-            servings: "12",
-            cooktime: "1 hour",
+            servings: 12,
+            cooktime: 60,
             dataPublished: "2023-10-06",
             url: "https://www.foodandwine.com/chocolate-chunk-cookies-7642670"),
         Recipe(
@@ -49,8 +49,8 @@ extension Recipe {
             ingredients: "3 cups Vanilla Ice Cream\n1/2 cup Frozen Sliced Strawberries, sweetened (mostly thawed)\n1/2 cup Milk\n1/4 cup Whipped Topping",
             directions: "1. Combine: Place the scoops of vanilla ice cream in a blender. Pour in the milk and sweetened strawberries.\n2. Blend: Blend on high until the ingredients are smooth and incorporated.\n3. Serve: Top with whipped topping and enjoy!",
             category: [.all,.breakfast],
-            servings: "2",
-            cooktime: "15 minutes",
+            servings: 2,
+            cooktime: 15,
             dataPublished: "2023-10-06",
             url: "https://therecipecritic.com/strawberry-milkshake/"),
         Recipe(
@@ -61,8 +61,8 @@ extension Recipe {
             ingredients: "2 tablespoon chia seeds\n1/2 cup almond milk or milk of choice\n1 teaspoon honey or other sweetener, optional\nStrawberries or other fruits for topping",
             directions: "1. Pour ingredients into a jar and mix well. Let settle for 2-3 minutes then mix again very well until you see no clumping.\n2. Cover the jar and store in fridge overnight or for at least 2 hours.\n3. When you’re ready to eat it, top with your favorite fruit and enjoy cold!",
             category: [.all,.snack],
-            servings: "2",
-            cooktime: "3 hours",
+            servings: 2,
+            cooktime: 180,
             dataPublished: "2023-10-06",
             url: "https://feelgoodfoodie.net/recipe/3-ingredient-chia-pudding/"),
         Recipe(
@@ -73,8 +73,8 @@ extension Recipe {
             ingredients: "1 pound of penne pasta\n1/2 cup of olive oil\n2 pints of cherry tomatoes\n1 8 oz block of feta cheese\n1 tablespoon of italian seasoning\n2 pinches of red pepper flakes",
             directions: "1. Preheat the oven to 400 degrees Fahrenheit. To a baking dish, add tomatoes, olive oil, and salt; toss to coat.\n2. Place the feta in the center of the dish and drizzle with more olive oil. Sprinkle red pepper flakes on top.\n3. Bake for 30 minutes. Increase the heat to 450 degrees Fahrenheit and bake for 5-10 more minutes, or until the feta has browned and the tomatoes have blistered.\n4.While baking, cook the pasta according to package instructions. Drain the noodles but save some pasta water for the sauce (about 1 cup).\n5. Once cooked, take the baking dish out of the oven and stir in the garlic and basil. The residual heat will warm the garlic and take out its raw edge.\n6. Toss in the pasta. Add pasta water if the sauce is too dry. Season with salt and pepper. Serve and enjoy!",
             category: [.all,.dinner],
-            servings: "6",
-            cooktime: "1 hour",
+            servings: 6,
+            cooktime: 60,
             dataPublished: "2023-10-06",
             url: "https://insanelygoodrecipes.com/tiktok-feta-pasta/"),
         Recipe(
@@ -85,8 +85,8 @@ extension Recipe {
             ingredients: "4 Russet potatoes approximately 6-8 ounces each\n2 tablespoons olive oil\nkosher salt to taste\ntoppings such as butter, sour cream, cheese and bacon",
             directions: "1. Preheat the oven to 425 degrees F. Coat a sheet pan with cooking spray.\n2. Scrub the potatoes under cold running water. Prick the potatoes all over with a fork or paring knife.\n3. Place the potatoes on the sheet pan. Brush the olive oil all over the potatoes, then season the potatoes generously with salt.\n4. Place the pan in the oven. Bake for 45-60 minutes or until skins are crisp and insides are tender.\n5. Let potatoes cool for 5 minutes. Cut a slit down the center of each potato and pull the sides back. Fluff the insides of the potatoes with a fork.\n6. Add toppings as desired, then serve. ",
             category: [.all,.side],
-            servings: "6",
-            cooktime: "1.5 hours",
+            servings: 6,
+            cooktime: 90,
             dataPublished: "2023-10-06",
             url: "https://www.dinneratthezoo.com/oven-baked-potatoes/"),
 

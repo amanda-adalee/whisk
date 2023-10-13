@@ -7,23 +7,27 @@
 
 import SwiftUI
 
+// TODO: modularize this for code reusability and readability
 struct NewRecipeView: View {
     @State private var name: String = ""
-    @State private var image: UIImage?
     @State private var description: String = ""
-    @State private var ingredients: String = ""
-    @State private var directions: String = ""
+    @State private var image: UIImage?
+    @State private var ingredients: [String] = []
+    @State private var newIngredient: String = ""
+    @State private var directions: [String] = []
+    @State private var newDirection: String = ""
     @State private var selectedCategory: Category = Category.all
-    @State private var servings: String = ""
-    @State private var cooktime: String = ""
+    @State private var servings: Int = 0
+    @State private var cooktime: Int = 0
     
     @State private var isImagePickerPresented: Bool = false
-    
     @Environment(\.dismiss) var dismiss
-    
     @Binding var selectedTab: Int
-
     
+    func deleteItem<T>(from array: inout [T], at offsets: IndexSet) {
+        array.remove(atOffsets: offsets)
+    }
+
     var body: some View {
         NavigationView{
             Form{
@@ -51,17 +55,53 @@ struct NewRecipeView: View {
                 }
                 
                 Section(header: Text("Ingredients")) {
-                    TextField("add one ingredient at a time", text:$ingredients)
+                            List {
+                                ForEach(ingredients, id: \.self) { ingredient in
+                                    Text(ingredient)
+                                }
+                                .onDelete(perform: { offsets in
+                                    deleteItem(from: &ingredients, at: offsets)
+                                })
+                            }
+                    
+                    HStack {
+                        TextField("add one ingredient at a time", text: $newIngredient)
+                        
+                        Button("+") {
+                            if !newIngredient.isEmpty {
+                                ingredients.append(newIngredient)
+                                newIngredient = ""
+                            }
+                        }
+                    }
                 }
                 
                 Section(header: Text("Directions")) {
-                    TextField("add one direction at a time", text:$directions)
+                            List {
+                                ForEach(directions, id: \.self) { direction in
+                                    Text(direction)
+                                }
+                                .onDelete(perform: { offsets in
+                                    deleteItem(from: &directions, at: offsets)
+                                })
+                            }
+                    
+                    HStack {
+                        TextField("add one direction at a time", text: $newDirection)
+                        
+                        Button("+") {
+                            if !newDirection.isEmpty {
+                                directions.append(newDirection)
+                                newDirection = ""
+                            }
+                        }
+                    }
                 }
                 
                 Section(header: Text("Category")) {
                     Picker("pick a category", selection: $selectedCategory) {
                         ForEach(Category.allCases) { category in
-                            Text(category.rawValue.capitalized)
+                            Text(category.rawValue)
                                 .tag(category)
                                 .foregroundColor(.black)
                         }
@@ -71,12 +111,14 @@ struct NewRecipeView: View {
                 }
                 
                 Section(header: Text("Servings")) {
-                    TextField("how many servings is this recipe for", text:$servings)
+                    Stepper("number of servings: \(servings)", value: $servings, in: 0...100)
+                        .foregroundColor(.gray)
+
                 }
                 
                 Section(header: Text("Cook Time")) {
-                    TextField("total cook time for recipe", text:$cooktime)
-                }
+                    Stepper("total cooktime: \(cooktime) mins", value: $cooktime, in: 0...600, step: 5)
+                        .foregroundColor(.gray)                }
             }
             
             .toolbar(content: {
@@ -102,6 +144,7 @@ struct NewRecipeView: View {
             .navigationTitle("New Recipe")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .accentColor(.black)
         .navigationViewStyle(.stack)
     }
 }
