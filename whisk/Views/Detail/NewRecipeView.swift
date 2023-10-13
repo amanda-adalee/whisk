@@ -33,10 +33,22 @@ struct NewRecipeView: View {
             Form{
                 Section(header: Text("Name")) {
                     TextField("recipe name", text:$name)
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.white)
+                                .shadow(radius: 4, x: 2, y: 2)
+                        )
                 }
                 
                 Section(header: Text("Description")) {
-                    TextField("recipe description", text:$description)
+                    TextField("description of recipe", text:$name)
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.white)
+                                .shadow(radius: 4, x: 2, y: 2)
+                        )
                 }
                 
                 Section(header: Text("Image")) {
@@ -51,16 +63,23 @@ struct NewRecipeView: View {
                         .foregroundColor(.red)
                         .frame(maxWidth: .infinity, alignment: .center)
                     } else {
-                        Button("click to add a recipe image") {
-                            isImagePickerPresented = true
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.white)
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: 100)
+                                .shadow(radius: 4, x: 2, y: 2)
+                            
+                            Button("tap to add a recipe image") {
+                                isImagePickerPresented = true
+                            }
+                            .foregroundColor(.gray)
                         }
-                        .foregroundColor(.gray)
                     }
                 }
                 .sheet(isPresented: $isImagePickerPresented) {
                     ImagePicker(image: $image)
                 }
-                
+
                 Section(header: Text("Ingredients")) {
                             List {
                                 ForEach(ingredients, id: \.self) { ingredient in
@@ -73,6 +92,12 @@ struct NewRecipeView: View {
                     
                     HStack {
                         TextField("add one ingredient at a time", text: $newIngredient)
+                                .padding()
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(Color.white)
+                                        .shadow(radius: 4, x: 2, y: 2)
+                                )
                         
                         Button("+") {
                             if !newIngredient.isEmpty {
@@ -95,6 +120,12 @@ struct NewRecipeView: View {
                     
                     HStack {
                         TextField("add one direction at a time", text: $newDirection)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color.white)
+                                    .shadow(radius: 4, x: 2, y: 2)
+                            )
                         
                         Button("+") {
                             if !newDirection.isEmpty {
@@ -124,7 +155,7 @@ struct NewRecipeView: View {
                 }
                 
                 Section(header: Text("Cook Time")) {
-                    Stepper("total cooktime: \(cooktime) mins", value: $cooktime, in: 0...600, step: 5)
+                    Stepper("total cook time: \(cooktime) mins", value: $cooktime, in: 0...600, step: 5)
                         .foregroundColor(.gray)                }
             }
             
@@ -148,6 +179,8 @@ struct NewRecipeView: View {
                 }
             })
             
+            .background(Color.white)
+            .scrollContentBackground(.hidden)
             .navigationTitle("New Recipe")
             .navigationBarTitleDisplayMode(.inline)
         }
