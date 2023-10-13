@@ -24,6 +24,7 @@ struct Recipe: Identifiable {
     let servings: Int
     let cooktime: Int
     let dataPublished: String
+    let isFavorite: Bool
     let url: String
 }
 
@@ -40,6 +41,7 @@ extension Recipe {
             servings: 12,
             cooktime: 60,
             dataPublished: "2023-10-06",
+            isFavorite: false,
             url: "https://www.foodandwine.com/chocolate-chunk-cookies-7642670"),
         Recipe(
             id: UUID(),
@@ -52,6 +54,7 @@ extension Recipe {
             servings: 2,
             cooktime: 15,
             dataPublished: "2023-10-06",
+            isFavorite: false,
             url: "https://therecipecritic.com/strawberry-milkshake/"),
         Recipe(
             id: UUID(),
@@ -64,6 +67,7 @@ extension Recipe {
             servings: 2,
             cooktime: 180,
             dataPublished: "2023-10-06",
+            isFavorite: false,
             url: "https://feelgoodfoodie.net/recipe/3-ingredient-chia-pudding/"),
         Recipe(
             id: UUID(),
@@ -76,6 +80,7 @@ extension Recipe {
             servings: 6,
             cooktime: 60,
             dataPublished: "2023-10-06",
+            isFavorite: false,
             url: "https://insanelygoodrecipes.com/tiktok-feta-pasta/"),
         Recipe(
             id: UUID(),
@@ -88,6 +93,7 @@ extension Recipe {
             servings: 6,
             cooktime: 90,
             dataPublished: "2023-10-06",
+            isFavorite: false,
             url: "https://www.dinneratthezoo.com/oven-baked-potatoes/"),
 
     ]
