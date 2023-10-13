@@ -40,15 +40,22 @@ struct NewRecipeView: View {
                 }
                 
                 Section(header: Text("Image")) {
-                    if let image = image {
-                        Image(uiImage: image)
+                    if let unwrappedImage = image {
+                        Image(uiImage: unwrappedImage)
                             .resizable()
                             .scaledToFit()
+                        
+                        Button("delete image") {
+                            self.image = nil
+                        }
+                        .foregroundColor(.red)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    } else {
+                        Button("click to add a recipe image") {
+                            isImagePickerPresented = true
+                        }
+                        .foregroundColor(.gray)
                     }
-                    Button("click to add a recipe image") {
-                        isImagePickerPresented = true
-                    }
-                    .foregroundColor(.gray)
                 }
                 .sheet(isPresented: $isImagePickerPresented) {
                     ImagePicker(image: $image)
