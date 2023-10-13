@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD2E7F632AD9FFD000488ED7 /* LaunchScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2E7F622AD9FFD000488ED7 /* LaunchScreenView.storyboard */; };
 		AD4F9A922AD886630003775E /* CategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F9A912AD886630003775E /* CategoryPicker.swift */; };
 		AD4F9A942AD889270003775E /* CustomCategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F9A932AD889270003775E /* CustomCategoryPicker.swift */; };
 		AD4F9A982AD8A2C50003775E /* NewRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F9A972AD8A2C50003775E /* NewRecipeView.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD2E7F622AD9FFD000488ED7 /* LaunchScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenView.storyboard; sourceTree = "<group>"; };
 		AD4F9A912AD886630003775E /* CategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPicker.swift; sourceTree = "<group>"; };
 		AD4F9A932AD889270003775E /* CustomCategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryPicker.swift; sourceTree = "<group>"; };
 		AD4F9A972AD8A2C50003775E /* NewRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				ADAAA0F12ACF5DD400AD4EC8 /* TabBar.swift */,
 				ADAAA0EB2ACF5A4200AD4EC8 /* HomeView.swift */,
 				ADAAA0EF2ACF5C8D00AD4EC8 /* FavoritesView.swift */,
+				AD2E7F622AD9FFD000488ED7 /* LaunchScreenView.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				ADAAA0DE2ACF568200AD4EC8 /* Preview Assets.xcassets in Resources */,
 				ADAAA0DB2ACF568200AD4EC8 /* Assets.xcassets in Resources */,
+				AD2E7F632AD9FFD000488ED7 /* LaunchScreenView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +373,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreenView.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -397,6 +402,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreenView.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
