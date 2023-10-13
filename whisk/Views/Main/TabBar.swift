@@ -8,29 +8,38 @@
 import SwiftUI
 
 struct TabBar: View {
-    @State private var showNewRecipe = false
+    @State private var selectedTab: Int = 0
+    @State private var showNewRecipeView: Bool = false
     
     var body: some View {
-        TabView{
+        TabView(selection: $selectedTab) {
             HomeView()
-                .tabItem { 
+                .tabItem {
                     Label("Home", systemImage: "house")
-                        }
+                }
+                .tag(0)
             
-            Button("Enter new recipe manually") {
-                showNewRecipe = true
-            }
-            .tabItem {
-                Label("New", systemImage: "plus")
-            }
-            .sheet(isPresented: $showNewRecipe) {
-                NewRecipeView()
-            }
+            Text("New")
+                .tabItem {
+                    Label("New", systemImage: "plus")
+                }
+                .tag(1)
             
             FavoritesView()
                 .tabItem {
                     Label("Favorites", systemImage: "heart")
-                        }
+                }
+                .tag(2)
+        }
+        .onChange(of: selectedTab) { newValue in
+            if newValue == 1 {
+                showNewRecipeView = true
+                // Reset tab to home
+                selectedTab = 0
+            }
+        }
+        .sheet(isPresented: $showNewRecipeView) {
+            NewRecipeView(selectedTab: $selectedTab)
         }
         .accentColor(.black)
     }

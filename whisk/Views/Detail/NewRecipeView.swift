@@ -21,6 +21,9 @@ struct NewRecipeView: View {
     
     @Environment(\.dismiss) var dismiss
     
+    @Binding var selectedTab: Int
+
+    
     var body: some View {
         NavigationView{
             Form{
@@ -79,7 +82,8 @@ struct NewRecipeView: View {
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        dismiss()
+                        self.dismiss()
+                        selectedTab = 0
                     } label: {
                         Label("Cancel", systemImage: "xmark")
                             .labelStyle(.iconOnly)
@@ -103,5 +107,5 @@ struct NewRecipeView: View {
 }
 
 #Preview {
-    NewRecipeView()
+    NewRecipeView(selectedTab: .constant(0))
 }
