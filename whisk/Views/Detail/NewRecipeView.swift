@@ -42,7 +42,7 @@ struct NewRecipeView: View {
                 }
                 
                 Section(header: Text("Description")) {
-                    TextField("description of recipe", text:$name)
+                    TextField("description of recipe", text:$description)
                         .padding()
                         .background(
                             RoundedRectangle(cornerRadius: 10)
