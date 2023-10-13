@@ -9,12 +9,22 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var selectedCategory = Category.all
+    @State private var searchTerm = ""
     
     var filteredRecipes: [Recipe] {
-        if selectedCategory == .all {
-            return Recipe.sampleRecipes
+        var results = Recipe.sampleRecipes
+        
+        // Category filter
+        if selectedCategory != .all {
+            results = results.filter { $0.category.contains(selectedCategory) }
         }
-        return Recipe.sampleRecipes.filter { $0.category.contains(selectedCategory) }
+        
+        // Search term filter
+        if !searchTerm.isEmpty {
+            results = results.filter { $0.name.localizedCaseInsensitiveContains(searchTerm) }
+        }
+        
+        return results
     }
     
     var body: some View {
@@ -27,6 +37,7 @@ struct HomeView: View {
             
             }
             .navigationTitle("My Recipes")
+            .searchable(text: $searchTerm, prompt: "search recipes")
         }
         .navigationViewStyle(.stack)
     }
