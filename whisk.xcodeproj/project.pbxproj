@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD2E7F632AD9FFD000488ED7 /* LaunchScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2E7F622AD9FFD000488ED7 /* LaunchScreenView.storyboard */; };
+		AD2E7F692ADA37E000488ED7 /* BlackToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2E7F682ADA37E000488ED7 /* BlackToggleStyle.swift */; };
 		AD4F9A922AD886630003775E /* CategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F9A912AD886630003775E /* CategoryPicker.swift */; };
 		AD4F9A942AD889270003775E /* CustomCategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F9A932AD889270003775E /* CustomCategoryPicker.swift */; };
 		AD4F9A982AD8A2C50003775E /* NewRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F9A972AD8A2C50003775E /* NewRecipeView.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		AD2E7F622AD9FFD000488ED7 /* LaunchScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenView.storyboard; sourceTree = "<group>"; };
+		AD2E7F682ADA37E000488ED7 /* BlackToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackToggleStyle.swift; sourceTree = "<group>"; };
 		AD4F9A912AD886630003775E /* CategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPicker.swift; sourceTree = "<group>"; };
 		AD4F9A932AD889270003775E /* CustomCategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryPicker.swift; sourceTree = "<group>"; };
 		AD4F9A972AD8A2C50003775E /* NewRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				AD4F9A912AD886630003775E /* CategoryPicker.swift */,
 				AD4F9A932AD889270003775E /* CustomCategoryPicker.swift */,
 				AD4F9A992AD8AA610003775E /* ImagePicker.swift */,
+				AD2E7F682ADA37E000488ED7 /* BlackToggleStyle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				AD7C97302AD5EF4700F53F79 /* RecipeView.swift in Sources */,
 				AD4F9A982AD8A2C50003775E /* NewRecipeView.swift in Sources */,
 				ADAAA0D92ACF568100AD4EC8 /* ContentView.swift in Sources */,
+				AD2E7F692ADA37E000488ED7 /* BlackToggleStyle.swift in Sources */,
 				ADAAA0F22ACF5DD400AD4EC8 /* TabBar.swift in Sources */,
 				ADCD89402AD09963009C059E /* RecipeCard.swift in Sources */,
 				AD4F9A922AD886630003775E /* CategoryPicker.swift in Sources */,

@@ -19,6 +19,8 @@ struct NewRecipeView: View {
     @State private var selectedCategory: Category = Category.all
     @State private var servings: Int = 0
     @State private var cooktime: Int = 0
+    @State private var isFavorite: Bool = false
+    @State private var recipeUrl: String = ""
     
     @State private var isImagePickerPresented: Bool = false
     @Environment(\.dismiss) var dismiss
@@ -31,7 +33,7 @@ struct NewRecipeView: View {
     var body: some View {
         NavigationView{
             Form{
-                Section(header: Text("Name")) {
+                Section(header: Text("name")) {
                     TextField("recipe name", text:$name)
                         .padding()
                         .background(
@@ -41,7 +43,7 @@ struct NewRecipeView: View {
                         )
                 }
                 
-                Section(header: Text("Description")) {
+                Section(header: Text("description")) {
                     TextField("description of recipe", text:$description)
                         .padding()
                         .background(
@@ -51,7 +53,7 @@ struct NewRecipeView: View {
                         )
                 }
                 
-                Section(header: Text("Image")) {
+                Section(header: Text("image")) {
                     if let unwrappedImage = image {
                         Image(uiImage: unwrappedImage)
                             .resizable()
@@ -80,7 +82,7 @@ struct NewRecipeView: View {
                     ImagePicker(image: $image)
                 }
 
-                Section(header: Text("Ingredients")) {
+                Section(header: Text("ingredients")) {
                             List {
                                 ForEach(ingredients, id: \.self) { ingredient in
                                     Text(ingredient)
@@ -108,7 +110,7 @@ struct NewRecipeView: View {
                     }
                 }
                 
-                Section(header: Text("Directions")) {
+                Section(header: Text("directions")) {
                             List {
                                 ForEach(directions, id: \.self) { direction in
                                     Text(direction)
@@ -136,7 +138,7 @@ struct NewRecipeView: View {
                     }
                 }
                 
-                Section(header: Text("Category")) {
+                Section(header: Text("category")) {
                     Picker("pick a category", selection: $selectedCategory) {
                         ForEach(Category.allCases) { category in
                             Text(category.rawValue)
@@ -148,15 +150,32 @@ struct NewRecipeView: View {
                     .foregroundColor(.gray)
                 }
                 
-                Section(header: Text("Servings")) {
+                Section(header: Text("servings")) {
                     Stepper("number of servings: \(servings)", value: $servings, in: 0...100)
                         .foregroundColor(.gray)
 
                 }
                 
-                Section(header: Text("Cook Time")) {
+                Section(header: Text("cook time")) {
                     Stepper("total cook time: \(cooktime) mins", value: $cooktime, in: 0...600, step: 5)
-                        .foregroundColor(.gray)                }
+                        .foregroundColor(.gray)
+                }
+                
+                Section(header: Text("favorite")) {
+                    Toggle("favorite this recipe", isOn: $isFavorite)
+                        .toggleStyle(BlackToggleStyle())
+                }
+                
+                Section(header: Text("url")) {
+                    TextField("recipe url", text:$recipeUrl)
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.white)
+                                .shadow(radius: 4, x: 2, y: 2)
+                        )
+                }
+                
             }
             
             .toolbar(content: {
@@ -181,7 +200,7 @@ struct NewRecipeView: View {
             
             .background(Color.white)
             .scrollContentBackground(.hidden)
-            .navigationTitle("New Recipe")
+            .navigationTitle("new recipe")
             .navigationBarTitleDisplayMode(.inline)
         }
         .accentColor(.black)

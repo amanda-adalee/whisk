@@ -7,12 +7,40 @@
 
 import SwiftUI
 
-struct BlackToggleStyle: View {
+struct BlackToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack {
+            configuration.label
+                .foregroundColor(.gray)
+            
+            Spacer()
+            
+            Rectangle()
+                .fill(configuration.isOn ? Color.black : Color.gray)
+                .frame(width: 50, height: 30, alignment: .center)
+                .cornerRadius(15)
+                .overlay(
+                    Circle()
+                        .fill(Color.white)
+                        .padding(4)
+                        .offset(x: configuration.isOn ? 12 : -12, y: 0)
+                )
+                .onTapGesture {
+                    configuration.isOn.toggle()
+                }
+        }
+    }
+}
+
+struct BlackToggleStylePreview: View {
+    @State private var isOn: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Toggle("Test Toggle", isOn: $isOn)
+            .toggleStyle(BlackToggleStyle())
     }
 }
 
 #Preview {
-    BlackToggleStyle()
+    BlackToggleStylePreview()
 }
