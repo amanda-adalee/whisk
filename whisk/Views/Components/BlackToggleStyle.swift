@@ -22,7 +22,7 @@ struct BlackToggleStyle: ToggleStyle {
                 .overlay(
                     Circle()
                         .fill(Color.white)
-                        .padding(4)
+                        .padding(3)
                         .offset(x: configuration.isOn ? 12 : -12, y: 0)
                 )
                 .onTapGesture {
@@ -36,7 +36,7 @@ struct BlackToggleStylePreview: View {
     @State private var isOn: Bool = false
     
     var body: some View {
-        Toggle("Test Toggle", isOn: $isOn)
+        Toggle("test toggle", isOn: $isOn)
             .toggleStyle(BlackToggleStyle())
     }
 }
