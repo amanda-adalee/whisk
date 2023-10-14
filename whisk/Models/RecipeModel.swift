@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum Category: String, CaseIterable, Equatable, Identifiable {
     case all, breakfast, lunch, dinner, side, snack, dessert, drink
@@ -13,7 +14,7 @@ enum Category: String, CaseIterable, Equatable, Identifiable {
     var id: String { self.rawValue }
 }
 
-struct Recipe: Identifiable {
+class Recipe: Identifiable, ObservableObject {
     let id: UUID
     let name: String
     let image: String
@@ -24,11 +25,24 @@ struct Recipe: Identifiable {
     let servings: Int
     let cooktime: Int
     let dataPublished: String
-    let isFavorite: Bool
+    @Published var isFavorite: Bool
     let url: String
-}
+    
+    init(id: UUID, name: String, image: String, description: String, ingredients: String, directions: String, category: [Category], servings: Int, cooktime: Int, dataPublished: String, isFavorite: Bool, url: String) {
+        self.id = id
+        self.name = name
+        self.image = image
+        self.description = description
+        self.ingredients = ingredients
+        self.directions = directions
+        self.category = category
+        self.servings = servings
+        self.cooktime = cooktime
+        self.dataPublished = dataPublished
+        self.isFavorite = isFavorite // Initialized
+        self.url = url
+    }
 
-extension Recipe {
     static let sampleRecipes: [Recipe] = [
         Recipe(
             id: UUID(),

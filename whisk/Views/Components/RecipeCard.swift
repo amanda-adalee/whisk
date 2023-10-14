@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct RecipeCard: View {
-    var recipe: Recipe
     
-    @State private var isFavorite: Bool = false
+    @ObservedObject var recipe: Recipe
     
     var body: some View {
         VStack {
@@ -41,9 +40,9 @@ struct RecipeCard: View {
                 Spacer()  // Pushes the heart icon to the end
                             
                 Button(action: {
-                    isFavorite.toggle()}) {
-                            Image(systemName: isFavorite ? "heart.fill" : "heart")
-                            .foregroundColor(isFavorite ? .pink : .black)
+                    recipe.isFavorite.toggle()}) {
+                        Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
+                            .foregroundColor(recipe.isFavorite ? .black : .black)
                             }
                         }
                         .padding([.leading, .trailing, .bottom], 10)
