@@ -30,19 +30,19 @@ struct RecipeView: View {
                 .clipped()
                 .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
                 
-                VStack(spacing: 30) {
+                VStack(alignment: .center, spacing: 10) {
                     Text(recipe.name)
-                        .font(.largeTitle)
+                        .font(.title2)
                         .bold()
-                        .multilineTextAlignment(.center)
+                    
+                    if !recipe.description.isEmpty {
+                        Text(recipe.description)
+                    }
                     
                     VStack(alignment: .leading, spacing: 30) {
-                        if !recipe.description.isEmpty {
-                            Text(recipe.description)
-                        }
                         
                         if !recipe.ingredients.isEmpty {
-                            VStack(alignment: .leading, spacing: 20) {
+                            VStack(alignment: .leading, spacing: 10) {
                                 Text("Ingredients")
                                     .font(.headline)
                                 Text(recipe.ingredients)
@@ -50,7 +50,7 @@ struct RecipeView: View {
                         }
                         
                         if !recipe.directions.isEmpty {
-                            VStack(alignment: .leading, spacing: 20) {
+                            VStack(alignment: .leading, spacing: 10) {
                                 Text("Directions")
                                     .font(.headline)
                                 Text(recipe.directions)
@@ -60,7 +60,7 @@ struct RecipeView: View {
                     }
                     .frame(maxWidth:.infinity, alignment: .leading)
                 }
-                .padding(.horizontal)
+                .padding()
                 .background(
                     RoundedCorners(topLeft: 15, topRight: 15)
                         .fill(Color.white))
