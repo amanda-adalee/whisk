@@ -26,9 +26,9 @@ class Recipe: Identifiable, ObservableObject {
     let cooktime: Int
     let dataPublished: String
     @Published var isFavorite: Bool
-    let url: String
+    let recipeUrl: String
     
-    init(id: UUID, name: String, image: String, description: String, ingredients: String, directions: String, category: [Category], servings: Int, cooktime: Int, dataPublished: String, isFavorite: Bool, url: String) {
+    init(id: UUID, name: String, image: String, description: String, ingredients: String, directions: String, category: [Category], servings: Int, cooktime: Int, dataPublished: String, isFavorite: Bool, recipeUrl: String) {
         self.id = id
         self.name = name
         self.image = image
@@ -40,7 +40,7 @@ class Recipe: Identifiable, ObservableObject {
         self.cooktime = cooktime
         self.dataPublished = dataPublished
         self.isFavorite = isFavorite // Initialized
-        self.url = url
+        self.recipeUrl = recipeUrl
     }
 
     static let sampleRecipes: [Recipe] = [
@@ -56,7 +56,7 @@ class Recipe: Identifiable, ObservableObject {
             cooktime: 60,
             dataPublished: "2023-10-06",
             isFavorite: true,
-            url: "https://www.foodandwine.com/chocolate-chunk-cookies-7642670"),
+            recipeUrl: "https://www.foodandwine.com/chocolate-chunk-cookies-7642670"),
         Recipe(
             id: UUID(),
             name: "Strawberry Milkshake",
@@ -69,7 +69,7 @@ class Recipe: Identifiable, ObservableObject {
             cooktime: 15,
             dataPublished: "2023-10-06",
             isFavorite: false,
-            url: "https://therecipecritic.com/strawberry-milkshake/"),
+            recipeUrl: "https://therecipecritic.com/strawberry-milkshake/"),
         Recipe(
             id: UUID(),
             name: "Chia Pudding",
@@ -82,7 +82,7 @@ class Recipe: Identifiable, ObservableObject {
             cooktime: 180,
             dataPublished: "2023-10-06",
             isFavorite: true,
-            url: "https://feelgoodfoodie.net/recipe/3-ingredient-chia-pudding/"),
+            recipeUrl: "https://feelgoodfoodie.net/recipe/3-ingredient-chia-pudding/"),
         Recipe(
             id: UUID(),
             name: "Baked Feta Pasta",
@@ -95,7 +95,7 @@ class Recipe: Identifiable, ObservableObject {
             cooktime: 60,
             dataPublished: "2023-10-06",
             isFavorite: false,
-            url: "https://insanelygoodrecipes.com/tiktok-feta-pasta/"),
+            recipeUrl: "https://insanelygoodrecipes.com/tiktok-feta-pasta/"),
         Recipe(
             id: UUID(),
             name: "Cheesy Baked Potatoes",
@@ -108,7 +108,7 @@ class Recipe: Identifiable, ObservableObject {
             cooktime: 90,
             dataPublished: "2023-10-06",
             isFavorite: true,
-            url: "https://www.dinneratthezoo.com/oven-baked-potatoes/"),
+            recipeUrl: "https://www.dinneratthezoo.com/oven-baked-potatoes/"),
 
     ]
 }
