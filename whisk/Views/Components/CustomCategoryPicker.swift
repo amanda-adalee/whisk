@@ -19,7 +19,7 @@ struct CustomCategoryPicker: View {
                         self.selectedCategory = category
                     }) {
                         ZStack(alignment: .bottom) {
-                            Text(category.rawValue.capitalized)
+                            Text(category.rawValue)
                                 .padding(.horizontal)
                                 .foregroundColor(
                                     selectedCategory == category ? Color.black : Color.gray

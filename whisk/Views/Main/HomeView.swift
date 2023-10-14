@@ -36,7 +36,7 @@ struct HomeView: View {
                 RecipeList(recipes: filteredRecipes)
             
             }
-            .navigationTitle("My Recipes")
+            .navigationTitle("my recipes")
             .searchable(text: $searchTerm, prompt: "search recipes")
         }
         .navigationViewStyle(.stack)

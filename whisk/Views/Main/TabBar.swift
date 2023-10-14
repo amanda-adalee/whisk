@@ -15,19 +15,19 @@ struct TabBar: View {
         TabView(selection: $selectedTab) {
             HomeView()
                 .tabItem {
-                    Label("Home", systemImage: "house")
+                    Label("home", systemImage: "house")
                 }
                 .tag(0)
             
             Text("New")
                 .tabItem {
-                    Label("New", systemImage: "plus")
+                    Label("new", systemImage: "plus")
                 }
                 .tag(1)
             
             FavoritesView()
                 .tabItem {
-                    Label("Favorites", systemImage: "heart")
+                    Label("favorites", systemImage: "heart")
                 }
                 .tag(2)
         }

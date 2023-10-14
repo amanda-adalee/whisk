@@ -33,7 +33,7 @@ struct RecipeCard: View {
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
             
             HStack {
-                Text(recipe.name)
+                Text(recipe.name.lowercased())
                     .font(.title3)
                     .foregroundColor(.primary)
                             
