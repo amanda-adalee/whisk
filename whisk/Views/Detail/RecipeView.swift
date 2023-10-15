@@ -60,17 +60,17 @@ struct RecipeView: View {
                     VStack(alignment: .leading, spacing: 10) {
                         switch selection {
                         case .ingredients:
-                                if !recipe.ingredients.isEmpty {
-                                    ForEach(recipe.ingredients.split(separator: "\n"), id: \.self) { ingredient in
-                                        HStack(alignment: .top) {
-                                            Text("•").font(.body)
-                                            VStack(alignment: .leading) {
-                                                Text(ingredient)
-                                            }
-                                            Spacer()
+                            if !recipe.ingredients.isEmpty {
+                                ForEach(recipe.ingredients, id: \.self) { ingredient in
+                                    HStack(alignment: .top) {
+                                        Text("•").font(.body)
+                                        VStack(alignment: .leading) {
+                                            Text(ingredient)
                                         }
+                                        Spacer()
                                     }
                                 }
+                            }
                         case .directions:
                             if !recipe.directions.isEmpty {
                                 VStack {

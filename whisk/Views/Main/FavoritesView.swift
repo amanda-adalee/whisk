@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// TODO: this list is not updating when a recipe is favorited in the home view, need to fix
+// TODO: favorites view does not refresh once a recipe has been un/favorited, fix this
 struct FavoritesView: View {
     @State private var selectedCategory = Category.all
     @State private var searchTerm = ""
