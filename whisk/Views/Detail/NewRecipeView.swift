@@ -151,9 +151,16 @@ struct NewRecipeView: View {
 
                 }
                 
-                Section(header: Text("cook time")) {
-                    Stepper("total cook time: \(cooktime) mins", value: $cooktime, in: 0...600, step: 5)
-                        .foregroundColor(.gray)
+                Section(header: Text("Cook Time")) {
+                    Picker("Total Cook Time", selection: $cooktime) {
+                        ForEach(Array(stride(from: 0, to: 601, by: 5)), id: \.self) { minute in
+                            Text("\(minute) mins")
+                        }
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                    .frame(height: 100)
+                    .clipped()
+                    .foregroundColor(.gray)
                 }
                 
                 Section(header: Text("favorite")) {
