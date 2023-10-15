@@ -39,6 +39,12 @@ struct RecipeView: View {
                         Text(recipe.description)
                     }
                     
+                    HStack {
+                        RecipeInfoBox(label: "Category", value: recipe.category.dropFirst().map { $0.rawValue }.joined(separator: ", "))
+                        RecipeInfoBox(label: "Servings", value: String(recipe.servings))
+                        RecipeInfoBox(label: "Cook Time", value: "\(recipe.cooktime) mins")
+                    }.padding(.vertical, 8)
+                    
                     VStack(alignment: .leading, spacing: 30) {
                         
                         if !recipe.ingredients.isEmpty {
@@ -98,6 +104,7 @@ struct RoundedCorners: Shape {
         return path
     }
 }
+
 
 #Preview {
     RecipeView(recipe: Recipe.sampleRecipes[0])
