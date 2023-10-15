@@ -108,7 +108,7 @@ class Recipe: Identifiable, ObservableObject {
             cooktime: 90,
             dataPublished: "2023-10-06",
             isFavorite: true,
-            recipeUrl: "https://www.dinneratthezoo.com/oven-baked-potatoes/"),
+            recipeUrl: ""),
 
     ]
 }

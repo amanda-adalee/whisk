@@ -36,9 +36,21 @@ struct RecipeView: View {
                 .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
                 
                 VStack(alignment: .center, spacing: 10) {
-                    Text(recipe.name.lowercased())
-                        .font(.title2)
-                        .bold()
+                    
+                    HStack {
+                        Text(recipe.name.lowercased())
+                            .font(.title2)
+                            .bold()
+                        if !recipe.recipeUrl.isEmpty {
+                            Image(systemName: "link")
+                                .font(.title2)
+                        }
+                    }
+                    .onTapGesture {
+                            if let url = URL(string: recipe.recipeUrl) {
+                                UIApplication.shared.open(url)
+                            }
+                    }
                     
                     if !recipe.description.isEmpty {
                         Text(recipe.description.lowercased())
