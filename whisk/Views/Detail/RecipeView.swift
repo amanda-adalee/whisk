@@ -10,6 +10,11 @@ import SwiftUI
 struct RecipeView: View {
     var recipe: Recipe
     
+    @State private var selection: DisplayOption = .ingredients
+        
+    enum DisplayOption {
+        case ingredients, directions }
+    
     var body: some View {
         ScrollView {
             VStack(spacing: -15) {
@@ -31,38 +36,48 @@ struct RecipeView: View {
                 .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
                 
                 VStack(alignment: .center, spacing: 10) {
-                    Text(recipe.name)
+                    Text(recipe.name.lowercased())
                         .font(.title2)
                         .bold()
                     
                     if !recipe.description.isEmpty {
-                        Text(recipe.description)
+                        Text(recipe.description.lowercased())
                     }
                     
                     HStack {
-                        RecipeInfoBox(label: "Category", value: recipe.category.dropFirst().map { $0.rawValue }.joined(separator: ", "))
-                        RecipeInfoBox(label: "Servings", value: String(recipe.servings))
-                        RecipeInfoBox(label: "Cook Time", value: "\(recipe.cooktime) mins")
+                        RecipeInfoBox(label: "category", value: recipe.category.dropFirst().map { $0.rawValue }.joined(separator: ", "))
+                        RecipeInfoBox(label: "servings", value: String(recipe.servings))
+                        RecipeInfoBox(label: "cook time", value: "\(recipe.cooktime) mins")
                     }.padding(.vertical, 8)
                     
-                    VStack(alignment: .leading, spacing: 30) {
-                        
-                        if !recipe.ingredients.isEmpty {
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text("Ingredients")
-                                    .font(.headline)
-                                Text(recipe.ingredients)
+                    Picker("Show:", selection: $selection) {
+                                            Text("ingredients").tag(DisplayOption.ingredients)
+                                            Text("directions").tag(DisplayOption.directions)
+                                        }
+                                        .pickerStyle(SegmentedPickerStyle())
+                                        .padding(.horizontal)
+                    
+                    VStack(alignment: .leading, spacing: 10) {
+                        switch selection {
+                        case .ingredients:
+                                if !recipe.ingredients.isEmpty {
+                                    ForEach(recipe.ingredients.split(separator: "\n"), id: \.self) { ingredient in
+                                        HStack(alignment: .top) {
+                                            Text("•").font(.body)
+                                            VStack(alignment: .leading) {
+                                                Text(ingredient)
+                                            }
+                                            Spacer()
+                                        }
+                                    }
+                                }
+                        case .directions:
+                            if !recipe.directions.isEmpty {
+                                VStack {
+                                    Text(recipe.directions)
+                                }
                             }
                         }
-                        
-                        if !recipe.directions.isEmpty {
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text("Directions")
-                                    .font(.headline)
-                                Text(recipe.directions)
-                            }
-                        }
-                        
                     }
                     .frame(maxWidth:.infinity, alignment: .leading)
                 }
