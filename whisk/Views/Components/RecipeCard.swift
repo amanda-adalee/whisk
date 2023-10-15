@@ -1,9 +1,4 @@
-//
-//  RecipeCard.swift
-//  whisk
-//
 //  Created by Amanda Arreola on 10/6/23.
-//
 
 import SwiftUI
 
@@ -37,7 +32,7 @@ struct RecipeCard: View {
                     .font(.title3)
                     .foregroundColor(.primary)
                             
-                Spacer()  // Pushes the heart icon to the end
+                Spacer()  // pushes the heart icon to the end
                             
                 Button(action: {
                     recipe.isFavorite.toggle()}) {

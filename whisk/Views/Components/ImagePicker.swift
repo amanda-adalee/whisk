@@ -1,9 +1,4 @@
-//
-//  ImagePicker.swift
-//  whisk
-//
 //  Created by Amanda Arreola on 10/12/23.
-//
 
 import SwiftUI
 

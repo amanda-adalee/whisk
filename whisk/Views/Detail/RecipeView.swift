@@ -1,9 +1,4 @@
-//
-//  RecipeView.swift
-//  whisk
-//
 //  Created by Amanda Arreola on 10/10/23.
-//
 
 import SwiftUI
 

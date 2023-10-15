@@ -1,9 +1,4 @@
-//
-//  BlackToggleStyle.swift
-//  whisk
-//
 //  Created by Amanda Arreola on 10/13/23.
-//
 
 import SwiftUI
 

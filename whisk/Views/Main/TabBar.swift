@@ -1,9 +1,4 @@
-//
-//  TabBar.swift
-//  whisk
-//
 //  Created by Amanda Arreola on 10/5/23.
-//
 
 import SwiftUI
 
@@ -34,7 +29,7 @@ struct TabBar: View {
         .onChange(of: selectedTab) { newValue in
             if newValue == 1 {
                 showNewRecipeView = true
-                // Reset tab to home
+                // reset tab to home
                 selectedTab = 0
             }
         }

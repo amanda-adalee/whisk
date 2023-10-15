@@ -1,9 +1,4 @@
-//
-//  HomeView.swift
-//  whisk
-//
 //  Created by Amanda Arreola on 10/5/23.
-//
 
 import SwiftUI
 
@@ -14,12 +9,12 @@ struct HomeView: View {
     var filteredRecipes: [Recipe] {
         var results = Recipe.sampleRecipes
         
-        // Category filter
+        // category filter
         if selectedCategory != .all {
             results = results.filter { $0.category.contains(selectedCategory) }
         }
         
-        // Search term filter
+        // search term filter
         if !searchTerm.isEmpty {
             results = results.filter { $0.name.localizedCaseInsensitiveContains(searchTerm) }
         }

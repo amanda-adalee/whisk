@@ -1,9 +1,4 @@
-//
-//  RecipeInfoBox.swift
-//  whisk
-//
 //  Created by Amanda Arreola on 10/14/23.
-//
 
 import SwiftUI
 
