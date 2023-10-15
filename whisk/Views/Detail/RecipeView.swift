@@ -71,10 +71,17 @@ struct RecipeView: View {
                                     }
                                 }
                             }
+                        
                         case .directions:
                             if !recipe.directions.isEmpty {
-                                VStack {
-                                    Text(recipe.directions)
+                                ForEach(Array(recipe.directions.enumerated()), id: \.offset) { index, direction in
+                                    HStack(alignment: .top) {
+                                        Text("\(index + 1).").font(.body)
+                                        VStack(alignment: .leading) {
+                                            Text(direction)
+                                        }
+                                        Spacer()
+                                    }
                                 }
                             }
                         }
