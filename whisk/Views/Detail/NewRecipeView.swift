@@ -11,7 +11,7 @@ struct NewRecipeView: View {
     @State private var newIngredient: String = ""
     @State private var directions: [String] = []
     @State private var newDirection: String = ""
-    @State private var selectedCategory: Category = Category.all
+    @State private var selectedCategories: Set<Category> = [.all]
     @State private var servings: Int = 0
     @State private var cooktime: Int = 0
     @State private var isFavorite: Bool = false
@@ -134,16 +134,40 @@ struct NewRecipeView: View {
                 }
                 
                 Section(header: Text("category")) {
-                    Picker("pick a category", selection: $selectedCategory) {
-                        ForEach(Category.allCases) { category in
-                            Text(category.rawValue)
-                                .tag(category)
-                                .foregroundColor(.black)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(Array(Category.allCases.dropFirst()), id: \.self) { category in
+                                Button(action: {
+                                    if selectedCategories.contains(category) {
+                                        selectedCategories.remove(category)
+                                    } else {
+                                        selectedCategories.insert(category)
+                                    }
+                                }) {
+                                    
+                                    HStack {
+                                        if selectedCategories.contains(category) {
+                                            Image(systemName: "checkmark")
+                                                .foregroundColor(.gray)
+                                        }
+                                        Text(category.rawValue)
+                                            .fixedSize()
+                                    }
+                                    .padding(.horizontal, 16)
+                                    .padding(.vertical, 8)
+                                    .background(selectedCategories.contains(category) ? Color.black : Color.white)
+                                    .foregroundColor(.gray)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.gray, lineWidth: 1)
+                                                            )
+                                }
+                            }
                         }
                     }
-                    .pickerStyle(.menu)
-                    .foregroundColor(.gray)
                 }
+
                 
                 Section(header: Text("servings")) {
                     Stepper("number of servings: \(servings)", value: $servings, in: 0...100)
@@ -151,8 +175,8 @@ struct NewRecipeView: View {
 
                 }
                 
-                Section(header: Text("Cook Time")) {
-                    Picker("Total Cook Time", selection: $cooktime) {
+                Section(header: Text("cook time")) {
+                    Picker("cook time", selection: $cooktime) {
                         ForEach(Array(stride(from: 0, to: 601, by: 5)), id: \.self) { minute in
                             Text("\(minute) mins")
                         }
