@@ -10,13 +10,13 @@ An in-progress ios recipe app <br>
 * XCode
 
 ## Visuals of App
-![homeview](https://github.com/amanda-adalee/whisk/assets/83192428/3f1755ce-16e1-4f8c-8f8e-ca6eb2d41286)
+![homeview](https://github.com/amanda-adalee/whisk/assets/83192428/53cef431-6d0d-4196-8e1a-95a4ce0367db)
 
-![recipeviewint](https://github.com/amanda-adalee/whisk/assets/83192428/19243844-a819-4001-951c-bf12ecec5a0a)
+![recipeviewint](https://github.com/amanda-adalee/whisk/assets/83192428/443b0a2e-f510-44b5-bc28-1667d66bb786)
 
-![recipeviewdircect](https://github.com/amanda-adalee/whisk/assets/83192428/a2a20881-2ff9-41bc-b737-29834103f500)
+![recipeviewdircect](https://github.com/amanda-adalee/whisk/assets/83192428/d924ff5f-0f55-4286-875f-a3eb51bcbf3e)
 
-![addrecipeview](https://github.com/amanda-adalee/whisk/assets/83192428/66f382d0-2253-4121-9b5b-496e45213132)
+![addrecipeview](https://github.com/amanda-adalee/whisk/assets/83192428/aa43bcc6-0a1a-494e-82f9-083e778c4f2d)
 
 ## Author
 Amanda Arreola
