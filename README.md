@@ -1,13 +1,13 @@
 # whisk
-An in progress ios recipe app <br>
-Functionality to add, view, edit, and delete recipes. Ability to favorite recipes, and view all favorite recipes in one place. Can search / filter recipes on name and category attributes. 
+An in-progress ios recipe app <br>
+* Functionality to add, view, edit, and delete recipes. Ability to favorite recipes, and view all favorite recipes in one place. Can search / filter recipes on name and category attributes. 
 
 ## Built with
-Swift<br>
-SwiftUI<br>
-SQLite <br>
-AdobeXD<br>
-XCode
+* Swift<br>
+* SwiftUI<br>
+* SQLite <br>
+* AdobeXD<br>
+* XCode
 
 ## Visuals of App
 ![homeview](https://github.com/amanda-adalee/whisk/assets/83192428/3f1755ce-16e1-4f8c-8f8e-ca6eb2d41286)
