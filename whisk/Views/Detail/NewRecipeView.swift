@@ -62,61 +62,8 @@ struct NewRecipeView: View {
                     ImagePicker(image: $image)
                 }
 
-                Section(header: Text("ingredients")) {
-                            List {
-                                ForEach(ingredients, id: \.self) { ingredient in
-                                    Text(ingredient)
-                                }
-                                .onDelete(perform: { offsets in
-                                    deleteItem(from: &ingredients, at: offsets)
-                                })
-                            }
-                    
-                    HStack {
-                        TextField("add one ingredient at a time", text: $newIngredient)
-                                .padding()
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill(Color.white)
-                                        .shadow(radius: 4, x: 2, y: 2)
-                                )
-                        
-                        Button("+") {
-                            if !newIngredient.isEmpty {
-                                ingredients.append(newIngredient)
-                                newIngredient = ""
-                            }
-                        }
-                    }
-                }
-                
-                Section(header: Text("directions")) {
-                            List {
-                                ForEach(directions, id: \.self) { direction in
-                                    Text(direction)
-                                }
-                                .onDelete(perform: { offsets in
-                                    deleteItem(from: &directions, at: offsets)
-                                })
-                            }
-                    
-                    HStack {
-                        TextField("add one direction at a time", text: $newDirection)
-                            .padding()
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(Color.white)
-                                    .shadow(radius: 4, x: 2, y: 2)
-                            )
-                        
-                        Button("+") {
-                            if !newDirection.isEmpty {
-                                directions.append(newDirection)
-                                newDirection = ""
-                            }
-                        }
-                    }
-                }
+                ListInput(headerTitle: "ingredients", items: $ingredients, newItem: $newIngredient)
+                ListInput(headerTitle: "directions", items: $directions, newItem: $newDirection)
                 
                 Section(header: Text("category")) {
                     ScrollView(.horizontal, showsIndicators: false) {
