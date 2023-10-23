@@ -28,25 +28,10 @@ struct NewRecipeView: View {
     var body: some View {
         NavigationView{
             Form{
-                Section(header: Text("name")) {
-                    TextField("recipe name", text:$name)
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.white)
-                                .shadow(radius: 4, x: 2, y: 2)
-                        )
-                }
                 
-                Section(header: Text("description")) {
-                    TextField("description of recipe", text:$description)
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.white)
-                                .shadow(radius: 4, x: 2, y: 2)
-                        )
-                }
+                TextInput(title: "name", text: $name)
+                
+                TextInput(title: "description", text: $description)
                 
                 Section(header: Text("image")) {
                     if let unwrappedImage = image {
