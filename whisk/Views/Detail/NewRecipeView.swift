@@ -85,10 +85,7 @@ struct NewRecipeView: View {
                     .foregroundColor(.gray)
                 }
                 
-                Section(header: Text("favorite")) {
-                    Toggle("favorite this recipe", isOn: $isFavorite)
-                        .toggleStyle(BlackToggleStyle())
-                }
+                FavoriteInput(isFavorite: $isFavorite)
                 
                 Section(header: Text("url")) {
                     TextField("recipe url", text:$recipeUrl)
