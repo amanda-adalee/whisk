@@ -30,36 +30,7 @@ struct NewRecipeView: View {
                 
                 TextInput(title: "name", text: $name)
                 TextInput(title: "description", text: $description)
-                
-                Section(header: Text("image")) {
-                    if let unwrappedImage = image {
-                        Image(uiImage: unwrappedImage)
-                            .resizable()
-                            .scaledToFit()
-                        
-                        Button("delete image") {
-                            self.image = nil
-                        }
-                        .foregroundColor(.red)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                    } else {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.white)
-                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: 100)
-                                .shadow(radius: 4, x: 2, y: 2)
-                            
-                            Button("tap to add a recipe image") {
-                                isImagePickerPresented = true
-                            }
-                            .foregroundColor(.gray)
-                        }
-                    }
-                }
-                .sheet(isPresented: $isImagePickerPresented) {
-                    ImagePicker(image: $image)
-                }
-
+                ImageInput(image: $image)
                 ListInput(headerTitle: "ingredients", items: $ingredients, newItem: $newIngredient)
                 ListInput(headerTitle: "directions", items: $directions, newItem: $newDirection)
                 CategoryInput(categories: Array(Category.allCases.dropFirst()), selectedCategories: $selectedCategories)
