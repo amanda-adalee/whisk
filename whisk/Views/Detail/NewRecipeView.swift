@@ -30,7 +30,6 @@ struct NewRecipeView: View {
             Form{
                 
                 TextInput(title: "name", text: $name)
-                
                 TextInput(title: "description", text: $description)
                 
                 Section(header: Text("image")) {
@@ -65,40 +64,7 @@ struct NewRecipeView: View {
                 ListInput(headerTitle: "ingredients", items: $ingredients, newItem: $newIngredient)
                 ListInput(headerTitle: "directions", items: $directions, newItem: $newDirection)
                 
-                Section(header: Text("category")) {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(Array(Category.allCases.dropFirst()), id: \.self) { category in
-                                Button(action: {
-                                    if selectedCategories.contains(category) {
-                                        selectedCategories.remove(category)
-                                    } else {
-                                        selectedCategories.insert(category)
-                                    }
-                                }) {
-                                    
-                                    HStack {
-                                        if selectedCategories.contains(category) {
-                                            Image(systemName: "checkmark")
-                                                .foregroundColor(.gray)
-                                        }
-                                        Text(category.rawValue)
-                                            .fixedSize()
-                                    }
-                                    .padding(.horizontal, 16)
-                                    .padding(.vertical, 8)
-                                    .background(selectedCategories.contains(category) ? Color.black : Color.white)
-                                    .foregroundColor(.gray)
-                                    .cornerRadius(10)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(Color.gray, lineWidth: 1)
-                                                            )
-                                }
-                            }
-                        }
-                    }
-                }
+                CategoryInput(categories: Array(Category.allCases.dropFirst()), selectedCategories: $selectedCategories)
 
                 
                 Section(header: Text("servings")) {
