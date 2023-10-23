@@ -62,7 +62,7 @@ class Recipe: Identifiable, ObservableObject {
             category: [.all,.breakfast],
             servings: 2,
             cooktime: 15,
-            dataPublished: "2023-10-06",
+            dataPublished: "2023-10-07",
             isFavorite: false,
             recipeUrl: "https://therecipecritic.com/strawberry-milkshake/"),
         Recipe(
@@ -75,7 +75,7 @@ class Recipe: Identifiable, ObservableObject {
             category: [.all,.snack, .breakfast],
             servings: 2,
             cooktime: 180,
-            dataPublished: "2023-10-06",
+            dataPublished: "2023-10-08",
             isFavorite: true,
             recipeUrl: "https://feelgoodfoodie.net/recipe/3-ingredient-chia-pudding/"),
         Recipe(
@@ -88,7 +88,7 @@ class Recipe: Identifiable, ObservableObject {
             category: [.all,.dinner],
             servings: 6,
             cooktime: 60,
-            dataPublished: "2023-10-06",
+            dataPublished: "2023-10-09",
             isFavorite: false,
             recipeUrl: "https://insanelygoodrecipes.com/tiktok-feta-pasta/"),
         Recipe(
@@ -101,7 +101,7 @@ class Recipe: Identifiable, ObservableObject {
             category: [.all,.side,.dinner],
             servings: 6,
             cooktime: 90,
-            dataPublished: "2023-10-06",
+            dataPublished: "2023-10-10",
             isFavorite: true,
             recipeUrl: ""),
 
