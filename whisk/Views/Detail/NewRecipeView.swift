@@ -63,15 +63,8 @@ struct NewRecipeView: View {
 
                 ListInput(headerTitle: "ingredients", items: $ingredients, newItem: $newIngredient)
                 ListInput(headerTitle: "directions", items: $directions, newItem: $newDirection)
-                
                 CategoryInput(categories: Array(Category.allCases.dropFirst()), selectedCategories: $selectedCategories)
-
-                
-                Section(header: Text("servings")) {
-                    Stepper("number of servings: \(servings)", value: $servings, in: 0...100)
-                        .foregroundColor(.gray)
-
-                }
+                ServingsInput(servings: $servings)
                 
                 Section(header: Text("cook time")) {
                     Picker("cook time", selection: $cooktime) {
