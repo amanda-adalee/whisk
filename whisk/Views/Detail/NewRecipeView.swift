@@ -86,16 +86,7 @@ struct NewRecipeView: View {
                 }
                 
                 FavoriteInput(isFavorite: $isFavorite)
-                
-                Section(header: Text("url")) {
-                    TextField("recipe url", text:$recipeUrl)
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.white)
-                                .shadow(radius: 4, x: 2, y: 2)
-                        )
-                }
+                TextInput(title: "url", text: $recipeUrl)
                 
             }
             
