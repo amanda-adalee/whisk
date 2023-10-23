@@ -2,7 +2,6 @@
 
 import SwiftUI
 
-// TODO: modularize this for code reusability and readability
 struct NewRecipeView: View {
     @State private var name: String = ""
     @State private var description: String = ""
@@ -65,19 +64,7 @@ struct NewRecipeView: View {
                 ListInput(headerTitle: "directions", items: $directions, newItem: $newDirection)
                 CategoryInput(categories: Array(Category.allCases.dropFirst()), selectedCategories: $selectedCategories)
                 ServingsInput(servings: $servings)
-                
-                Section(header: Text("cook time")) {
-                    Picker("cook time", selection: $cooktime) {
-                        ForEach(Array(stride(from: 0, to: 601, by: 5)), id: \.self) { minute in
-                            Text("\(minute) mins")
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(height: 100)
-                    .clipped()
-                    .foregroundColor(.gray)
-                }
-                
+                CookTimeInput(cooktime: $cooktime)
                 FavoriteInput(isFavorite: $isFavorite)
                 TextInput(title: "url", text: $recipeUrl)
                 
