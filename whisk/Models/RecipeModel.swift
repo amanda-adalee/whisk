@@ -19,11 +19,11 @@ class Recipe: Identifiable, ObservableObject {
     let category: [Category]
     let servings: Int
     let cooktime: Int
-    let dataPublished: String
+    let datePublished: String
     @Published var isFavorite: Bool
     let recipeUrl: String
     
-    init(id: UUID, name: String, image: String, description: String, ingredients: Array<String>, directions: Array<String>, category: [Category], servings: Int, cooktime: Int, dataPublished: String, isFavorite: Bool, recipeUrl: String) {
+    init(id: UUID, name: String, image: String, description: String, ingredients: Array<String>, directions: Array<String>, category: [Category], servings: Int, cooktime: Int, datePublished: String, isFavorite: Bool, recipeUrl: String) {
         self.id = id
         self.name = name
         self.image = image
@@ -33,7 +33,7 @@ class Recipe: Identifiable, ObservableObject {
         self.category = category
         self.servings = servings
         self.cooktime = cooktime
-        self.dataPublished = dataPublished
+        self.datePublished = datePublished
         self.isFavorite = isFavorite
         self.recipeUrl = recipeUrl
     }
@@ -49,7 +49,7 @@ class Recipe: Identifiable, ObservableObject {
             category: [.all, .dessert],
             servings: 12,
             cooktime: 60,
-            dataPublished: "2023-10-06",
+            datePublished: "2023-10-12",
             isFavorite: true,
             recipeUrl: "https://www.foodandwine.com/chocolate-chunk-cookies-7642670"),
         Recipe(
@@ -62,7 +62,7 @@ class Recipe: Identifiable, ObservableObject {
             category: [.all,.breakfast],
             servings: 2,
             cooktime: 15,
-            dataPublished: "2023-10-07",
+            datePublished: "2023-10-07",
             isFavorite: false,
             recipeUrl: "https://therecipecritic.com/strawberry-milkshake/"),
         Recipe(
@@ -75,7 +75,7 @@ class Recipe: Identifiable, ObservableObject {
             category: [.all,.snack, .breakfast],
             servings: 2,
             cooktime: 180,
-            dataPublished: "2023-10-08",
+            datePublished: "2023-10-08",
             isFavorite: true,
             recipeUrl: "https://feelgoodfoodie.net/recipe/3-ingredient-chia-pudding/"),
         Recipe(
@@ -88,7 +88,7 @@ class Recipe: Identifiable, ObservableObject {
             category: [.all,.dinner],
             servings: 6,
             cooktime: 60,
-            dataPublished: "2023-10-09",
+            datePublished: "2023-10-09",
             isFavorite: false,
             recipeUrl: "https://insanelygoodrecipes.com/tiktok-feta-pasta/"),
         Recipe(
@@ -101,7 +101,7 @@ class Recipe: Identifiable, ObservableObject {
             category: [.all,.side,.dinner],
             servings: 6,
             cooktime: 90,
-            dataPublished: "2023-10-10",
+            datePublished: "2023-10-10",
             isFavorite: true,
             recipeUrl: ""),
 

@@ -16,6 +16,7 @@ struct NewRecipeView: View {
     @State private var isFavorite: Bool = false
     @State private var recipeUrl: String = ""
     
+    @State private var navigateToRecipe: Bool = false
     @State private var isImagePickerPresented: Bool = false
     @Environment(\.dismiss) var dismiss
     @Binding var selectedTab: Int
@@ -52,10 +53,16 @@ struct NewRecipeView: View {
                     }
                 }
                 ToolbarItem{
-                    Button {
+                    NavigationLink(isActive: $navigateToRecipe){
+                        RecipeView(recipe: Recipe.sampleRecipes.sorted{ $0.datePublished > $1.datePublished}[0])
+                            .navigationBarBackButtonHidden(true)
                     } label: {
-                        Label("Done", systemImage: "checkmark")
-                            .labelStyle(.iconOnly)
+                        Button {
+                            navigateToRecipe = true
+                        } label: {
+                            Label("Done", systemImage: "checkmark")
+                                .labelStyle(.iconOnly)
+                        }
                     }
                     .disabled(name.isEmpty)
                 }
