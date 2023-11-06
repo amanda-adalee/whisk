@@ -1,9 +1,4 @@
-//
-//  ImageInput.swift
-//  whisk
-//
 //  Created by Amanda Arreola on 10/23/23.
-//
 
 import Foundation
 import SwiftUI
@@ -41,6 +36,19 @@ struct ImageInput: View{
         }
         .sheet(isPresented: $isImagePickerPresented) {
             ImagePicker(image: $image)
+        }
+    }
+}
+
+// preview
+struct ImageInput_Previews: PreviewProvider {
+    
+    static let sampleImage = UIImage(systemName: "photo") // using a system image as an example
+    @State static var image: UIImage? = sampleImage
+    
+    static var previews: some View {
+        Form {
+            ImageInput(image: $image)
         }
     }
 }

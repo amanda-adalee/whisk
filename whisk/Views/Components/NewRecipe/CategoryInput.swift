@@ -1,9 +1,4 @@
-//
-//  CategoryInput.swift
-//  whisk
-//
 //  Created by Amanda Arreola on 10/23/23.
-//
 
 import Foundation
 import SwiftUI
@@ -45,6 +40,18 @@ struct CategoryInput: View {
                     }
                 }
             }
+        }
+    }
+}
+
+// preview
+struct CategoryInput_Previews: PreviewProvider {
+
+    @State static var selectedCategories: Set<Category> = [Category.breakfast]
+
+    static var previews: some View {
+        Form {
+            CategoryInput(categories: Array(Category.allCases.dropFirst()), selectedCategories: $selectedCategories)
         }
     }
 }

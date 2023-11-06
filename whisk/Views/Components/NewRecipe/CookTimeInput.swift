@@ -1,9 +1,4 @@
-//
-//  CookTimeInput.swift
-//  whisk
-//
 //  Created by Amanda Arreola on 10/23/23.
-//
 
 import Foundation
 import SwiftUI
@@ -24,5 +19,16 @@ struct CookTimeInput: View {
             .clipped()
             .foregroundColor(.gray)
         }
+    }
+}
+
+// preview
+struct CookTimeInput_Previews: PreviewProvider {
+    @State static var cookTime: Int = 0
+    
+    static var previews: some View {
+            Form {
+                CookTimeInput(cooktime: $cookTime)
+            }
     }
 }

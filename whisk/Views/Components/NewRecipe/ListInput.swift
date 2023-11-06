@@ -1,9 +1,4 @@
-//
-//  ListInput.swift
-//  whisk
-//
 //  Created by Amanda Arreola on 10/23/23.
-//
 
 import Foundation
 import SwiftUI
@@ -47,5 +42,18 @@ struct ListInput: View {
 extension String {
     func singularized() -> String {
         return self
+    }
+}
+
+// preview
+struct ListInput_Previews: PreviewProvider {
+
+    @State static var items: [String] = ["milk", "eggs", "bread", "sugar"]
+    @State static var newItem: String = ""
+
+    static var previews: some View {
+        Form {
+            ListInput(headerTitle: "ingredients", items: $items, newItem: $newItem)
+        }
     }
 }

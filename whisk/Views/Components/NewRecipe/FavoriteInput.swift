@@ -1,9 +1,4 @@
-//
-//  FavoriteInput.swift
-//  whisk
-//
 //  Created by Amanda Arreola on 10/23/23.
-//
 
 import Foundation
 
@@ -20,4 +15,15 @@ struct FavoriteInput: View{
         }
     }
     
+}
+
+// preview
+struct FavoriteInput_Previews: PreviewProvider {
+    @State static var isFavoritePreview: Bool = false
+    
+    static var previews: some View {
+        Form {
+            FavoriteInput(isFavorite: $isFavoritePreview)
+        }
+    }
 }

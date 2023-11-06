@@ -1,9 +1,4 @@
-//
-//  TextInput.swift
-//  whisk
-//
 //  Created by Amanda Arreola on 10/23/23.
-//
 
 import SwiftUI
 
@@ -24,3 +19,13 @@ struct TextInput: View {
     }
 }
 
+// preview
+struct TextInput_Previews: PreviewProvider {
+    @State static var text: String = "example text"
+    
+    static var previews: some View {
+            Form {
+                TextInput(title: "text", text: $text)
+            }
+    }
+}

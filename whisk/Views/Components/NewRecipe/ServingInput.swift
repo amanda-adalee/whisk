@@ -1,9 +1,4 @@
-//
-//  ServingInput.swift
-//  whisk
-//
 //  Created by Amanda Arreola on 10/23/23.
-//
 
 import Foundation
 import SwiftUI
@@ -20,4 +15,15 @@ struct ServingsInput: View{
         }
     }
     
+}
+
+// preview
+struct ServingsInput_Previews: PreviewProvider {
+    @State static var servings: Int = 0
+    
+    static var previews: some View {
+            Form {
+                ServingsInput(servings: $servings)
+            }
+    }
 }
